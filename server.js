@@ -32,7 +32,7 @@ const userSchema = new Schema({
 });
 
 // create a model for the sensor data
-const SensorData = mongoose.model('SensorData', sensorDataSchema);
+const SensorData = mongoose.model('SensorData', userSchema);
 
 // set the view engine
 app.set('view engine', 'ejs');
