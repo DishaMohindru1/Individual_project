@@ -10,11 +10,25 @@ connectToMongo()
     .catch(err => console.error('Failed to connect to MongoDB', err));
 
 // create a schema for the sensor data
-const sensorDataSchema = new mongoose.Schema({
-    data: String,
-    sDate: Date,
-    sTime: String,
-    ip: String
+// const sensorDataSchema = new mongoose.Schema({
+//     data: String,
+//     sDate: Date,
+//     sTime: String,
+//     ip: String
+// });
+const userSchema = new Schema({
+    data:{
+        type: String,
+        required: true
+    },
+    status:{
+        type:String,
+        required: true
+    },
+    date:{
+        type: Date,
+        default: Date.now
+    },
 });
 
 // create a model for the sensor data
@@ -32,7 +46,7 @@ app.get('/', (req, res) => {
             res.send('Failed to fetch sensor data from the database');
         } else {
             // render the data in a table using EJS template
-            res.render('index', { data });
+            res.render('smart-lighting', { data });
         }
     });
 });
