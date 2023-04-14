@@ -69,36 +69,14 @@
 			  </tr>
 			</thead>
 			<tbody>    
-			  <tr class="table-success">
-				<td>1</td>
-				<td>A</td>
-				<td>Phone</td>
-				<td>ON</td>
-			  </tr>
-			  <tr class="table-danger">
-				<td>2</td>
-				<td>B</td>
-				<td>Air-Conditioning</td>
-				<td>OFF</td>
-			  </tr>
-			  <tr class="table-success">
-				<td>3</td>
-				<td>C</td>
-				<td>Heating</td>
-				<td>ON</td>
-			  </tr>
-			  <tr class="table-success">
-				<td>4</td>
-				<td>D</td>
-				<td>Anti-Theft System</td>
-				<td>ON</td>
-			  </tr>
-			  <tr class="table-danger">
-				<td>5</td>
-				<td>E</td>
-				<td>IOT Sensor</td>
-				<td>OFF</td>
-			  </tr>
+			  <% data.forEach(sensorData => { %>
+			    <tr>
+				<td><%= sensorData._id %></td>
+				<td><%= sensorData._id %></td>
+				<td><%= sensorData.data %></td>
+				<td><%= sensorData.status %></td>
+			    </tr>
+			<% }); %>
 			</tbody>
 		  </table>
 		  </div>
