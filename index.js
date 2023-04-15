@@ -6,6 +6,11 @@ connectToMongo();
 const app = express()
 const port = process.env.PORT || 10000
 
+app.set("view engine", "ejs");
+app.get("/", (req, res) => {
+ res.render("index"); // index refers to index.ejs
+});
+
 app.use(express.json())
 app.use(cors())
 // app.get('/',(req,res)=>{res.send('djhg')})
