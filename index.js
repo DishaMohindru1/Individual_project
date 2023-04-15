@@ -6,7 +6,7 @@ const ejs = require('ejs');
 connectToMongo();
 
 const app = express()
-const port = process.env.PORT || 10000
+const port = process.env.PORT || 3000
 
 app.set("view engine", "ejs");
 app.get("/", (req, res) => {
